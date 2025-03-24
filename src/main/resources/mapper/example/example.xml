@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "nproj.article.example.mapper.ExampleMapper">
+    <!-- 테스트쿼리 -->
+    <select id="selectAll" resultType="nproj.article.example.model.ExampleModel">
+        SELECT * FROM EXAMPLE_TABLE
+    </select>
+
+</mapper>

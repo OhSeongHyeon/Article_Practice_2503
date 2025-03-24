@@ -1,0 +1,4 @@
+#spring.application.name=aticle
+spring:
+  application:
+    name: aticle
