@@ -1,0 +1,14 @@
+#{seq}
+#{writerId}
+#{title}
+#{content}
+#{viewCnt}
+#{isNotice}
+#{regDate}
+#{modifiedDate}
+
+{
+    writerId: "user00"
+    title: "test-title"
+    content: "test-title"
+}
