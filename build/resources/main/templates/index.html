@@ -1,68 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글 작성</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        label {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        textarea {
-            height: 200px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>게시판</title>
 </head>
 <body>
-
+<div class="layout">
+    <table>
+        <thead>
+        <tr>
+            <th>글번호</th>
+            <th>작성자</th>
+            <th>제목</th>
+            <th>내용</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "board:${list}">
+            <td th:text="${board.seq}">순서</td>
+            <td th:text="${board.writerId}">작성자</td>
+            <td>제목
+                <a th:text="${board.title}" th:href="@{/update(id=${board.seq})}"></a>
+            </td>
+            <td th:text="${board.content}">내용</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <div class="container">
     <h1>게시글 작성</h1>
-    <form action="/api/example/submit-post" method="POST">
+    <form action="/add" method="POST" enctype="multipart/form-data">
+        <label for="id">아이디</label>
+        <input type="text" id="id" name="writerId" required placeholder="아이디 입력">
+
         <label for="title">제목</label>
-        <input type="text" id="title" name="title" required placeholder="게시글 제목을 입력하세요">
+        <input type="text" id="title" name="title" required placeholder="게시글 제목 입력">
 
         <label for="content">내용</label>
-        <textarea id="content" name="content" required placeholder="게시글 내용을 입력하세요"></textarea>
+        <textarea id="content" name="content" required placeholder="게시글 내용 입력"></textarea>
 
         <button type="submit">게시글 작성</button>
     </form>

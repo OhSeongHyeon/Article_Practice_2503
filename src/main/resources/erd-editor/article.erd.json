@@ -4,8 +4,8 @@
   "settings": {
     "width": 2500,
     "height": 2500,
-    "scrollTop": -25,
-    "scrollLeft": 0,
+    "scrollTop": 0,
+    "scrollLeft": -600,
     "zoomLevel": 1,
     "show": 431,
     "database": 4,
@@ -89,7 +89,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1742878922039,
+          "updateAt": 1742955535107,
           "createAt": 1742862421208
         }
       },
@@ -570,7 +570,7 @@
         "comment": "등록일",
         "dataType": "date",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
@@ -579,7 +579,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1742867199612,
+          "updateAt": 1742955766875,
           "createAt": 1742866561749
         }
       },
@@ -1809,7 +1809,8 @@
       {
         "name": 1742866570288,
         "comment": 1742867199612,
-        "dataType": 1742866720480
+        "dataType": 1742866720480,
+        "options(notNull)": 1742955766874
       }
     ],
     "DqFDz3R3IXF5XaTydz1eG": [

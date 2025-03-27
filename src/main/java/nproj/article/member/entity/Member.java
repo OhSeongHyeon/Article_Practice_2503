@@ -1,4 +1,4 @@
-package nproj.article.member.model;
+package nproj.article.member.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

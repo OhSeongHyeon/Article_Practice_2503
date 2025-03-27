@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "nproj.article.board.mapper.BoardThreadMapper">
+    <select id="getBoardThreadList" resultType="nproj.article.board.entity.BoardThread">
+        /*SELECT * FROM BoardThread*/
+        SELECT * FROM BoardThread ORDER BY seq DESC
+    </select>
+    <select id="findBySeq" resultType="nproj.article.board.entity.BoardThread">
+        SELECT * FROM BoardThread
+        WHERE seq = #{seq}
+    </select>
+    <insert id="addBoardThread" parameterType="nproj.article.board.entity.BoardThread">
+        INSERT INTO BoardThread (
+            seq
+        ,   writer_id
+        ,   title
+        ,   content
+        ,   view_cnt
+        ,   is_notice
+        ,   is_deleted
+        ,   is_admin_allow
+        ,   reg_date
+        ,   modified_date
+        ) VALUES (
+            null
+        ,   #{writerId}
+        ,   #{title}
+        ,   #{content}
+        ,   0
+        ,   0
+        ,   0
+        ,   0
+        ,   NOW()
+        ,   NULL
+        )
+    </insert>
+</mapper>
